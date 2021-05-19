@@ -1,0 +1,13 @@
+// Breakpoints
+/*
+	Example:
+	@include breakpoint(stacked)
+		with: 100%
+*/
+
+@mixin breakpoint($class)
+	@if $class == 'stacked' 
+		@media (max-width: 767px)
+			@content
+	@else 
+		@warn "Breakpoint mixin only supports: stacked"
