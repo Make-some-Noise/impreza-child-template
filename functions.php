@@ -70,6 +70,7 @@ function <THEME_SLUG>_conditional_scripts() {
 }
 
 // Loads theme version in production and timestamp of last file change when debugging
-function theme_version( $file ) {
-	return WP_DEBUG ? date( "YmdHi", filemtime( $file ) ) : wp_get_theme()->get('Version');
-}
+// Best to leave this commented because if no logging is present in wp-config you are not able to start the child theme
+// function theme_version( $file ) {
+// 	return WP_DEBUG ? date( "YmdHi", filemtime( $file ) ) : wp_get_theme()->get('Version');
+// }
