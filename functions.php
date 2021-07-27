@@ -47,26 +47,26 @@ function add_custom_upload_mimes($existing_mimes) {
 }
 
 // Scripts and styles
-add_action('wp_enqueue_scripts', '<THEME_SLUG>_conditional_scripts'); // Add Conditional Page
+add_action('wp_enqueue_scripts', 'THEME_SLUG_conditional_scripts'); // Add Conditional Page
 
-function <THEME_SLUG>_conditional_scripts() {
+function THEME_SLUG_conditional_scripts() {
 
 	// Styles
-	wp_enqueue_style( '<THEME_SLUG>-style', get_stylesheet_directory_uri() . '/assets/css/style.min.css', array(), theme_version( get_stylesheet_directory() . '/assets/css/style.min.css' ), 'all');
+	wp_enqueue_style( 'THEME_SLUG-style', get_stylesheet_directory_uri() . '/assets/css/style.min.css', array(), theme_version( get_stylesheet_directory() . '/assets/css/style.min.css' ), 'all');
 
 	// Scripts
-	wp_register_script('<THEME_SLUG>-main-script', get_stylesheet_directory_uri() . '/assets/js/main.js', array('jquery'), theme_version( get_stylesheet_directory() . '/assets/js/main.js' ), true);
+	wp_register_script('THEME_SLUG-main-script', get_stylesheet_directory_uri() . '/assets/js/main.js', array('jquery'), theme_version( get_stylesheet_directory() . '/assets/js/main.js' ), true);
 	
-	// wp_register_script('<THEME_SLUG>-script-with-vars', get_stylesheet_directory_uri() . '/assets/js/script-with-vars.js', array('jquery'), theme_version( get_stylesheet_directory() . '/assets/js/script-with-vars.js' ), true);
+	// wp_register_script('THEME_SLUG-script-with-vars', get_stylesheet_directory_uri() . '/assets/js/script-with-vars.js', array('jquery'), theme_version( get_stylesheet_directory() . '/assets/js/script-with-vars.js' ), true);
 	// wp_register_script('lottie', get_stylesheet_directory_uri() . '/assets/js/packages/lottie.js', array(), theme_version( get_stylesheet_directory() . '/assets/js/packages/lottie.js' ), true); // Conditional script(s)
 	
 	$translation_array = array( 'folder_uri' => get_stylesheet_directory_uri() );
 	
 	// Enqueue scripts
-	wp_enqueue_script('<THEME_SLUG>-main-script');
+	wp_enqueue_script('THEME_SLUG-main-script');
 
 	// wp_enqueue_script('lottie');
-	// wp_localize_script( '<THEME_SLUG>-script-with-vars', 'theme_obj', $translation_array );
+	// wp_localize_script( 'THEME_SLUG-script-with-vars', 'theme_obj', $translation_array );
 }
 
 // Loads theme version in production and timestamp of last file change when debugging
